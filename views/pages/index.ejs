@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ryudg.github.io/NewYearCard/" />
+    <meta property="og:title" content="WeatherApp" />
+    <meta property="og:image" content="----------" />
+    <meta property="og:description" content="NewYearCard 홈페이지입니다." />
+    <meta property="og:site_name" content="NewYearCard" />
+    <meta property="og:locale" content="Kor" />
+    <meta name="keywords" content="NewYearCard, NewYear" />
+    <meta name="author" content="유동균" />
+    <meta name="description" content="NewYearCard 홈페이지입니다." />
+    <link rel="icon" href="/images/favicon.png" />
+
+    <title>Home</title>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div id="onepage">
+      <section class="title">
+        <div class="title-main-text">
+          <p data-aos="fade-up" data-aos-duration="1500">
+            <span>근</span><span>하</span>
+          </p>
+          <p data-aos="fade-up" data-aos-duration="1500">
+            <span>신</span><span>년</span>
+          </p>
+        </div>
+        <div class="title-sub-text">
+          <p data-aos="fade-up" data-aos-duration="1500">희망찬 새해</p>
+          <p data-aos="fade-up" data-aos-duration="1500">
+            행운이 가득하시기 바랍니다.
+          </p>
+        </div>
+      </section>
+      <section class="greetings">
+        <div class="greetings-main-text">
+          <p data-aos="fade-up" data-aos-duration="1500">
+            새해에는 항상 건강하시고
+          </p>
+          <p data-aos="fade-up" data-aos-duration="1500">
+            좋은 일 가득하시길 기원합니다.
+          </p>
+        </div>
+        <div class="greetings-slide-img swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide slide01"></div>
+            <div class="swiper-slide slide02"></div>
+            <div class="swiper-slide slide03"></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="greetings-sub-text">
+          <p data-aos="fade-up" data-aos-duration="1500">
+            다사다난했던 지난 해 <br />
+            무거운 짐들은 다 털어내시고 <br />
+            새로운 희망, 새로운 마음으로 <br />
+            새해 힘차게 출발하시기 바랍니다.<br />
+            새해 복 많이 받으세요.
+          </p>
+          <p data-aos="fade-up" data-aos-duration="1500">라이언 드림</p>
+        </div>
+      </section>
+      <section class="notice">
+        <div class="notice-title-text">
+          <h1>덕담 한마디</h1>
+        </div>
+        <div class="notice-write-box">
+          <div class="textareacount">
+            <p><span>0/255</span></p>
+          </div>
+          <form action="/create" method="post">
+            <textarea
+              name="post"
+              id="textarea"
+              cols="30"
+              rows="5"
+              maxlength="255"
+              class="notice-write-text"
+              placeholder="여기에 글을 작성해 주세요."
+              autocomplete="off"
+              onkeyup="countFilter()"
+              required
+            ></textarea>
+            <input
+              type="text"
+              name="post"
+              class="notice-write-author"
+              placeholder="작성자명"
+              autocomplete="off"
+              required
+            />
+            <button type="submit">글쓰기</button>
+          </form>
+        </div>
+        <div class="notice-contetns">
+          <% for( let i = postArr.length -1 ; i >= 0; i-- ) { %>
+          <div class="notice-content">
+            <div class="notice-content-info">
+              <div class="notice-content-author">
+                <p><%= postArr[i].author %></p>
+                <span><%= postArr[i].date %></span>
+              </div>
+              <div class="notice-content-delete">
+                <form action="/delete/<%= i %>" method="post">
+                  <button type="submit">
+                    <i class="fa-regular fa-trash-can"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="notice-content-text">
+              <p><%= postArr[i].txt %></p>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </section>
+    </div>
+
+    <!-- script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/67eff22c15.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      /* 필터 */
+      function countFilter() {
+        let txtarea = document.querySelector("#textarea");
+        let count = txtarea.value.length;
+        console.log(count);
+        let countTxt = document.querySelector(".textareacount p");
+        countTxt.innerHTML = `<span>${count}/255</span>`;
+      }
+
+      /* 스와이퍼 */
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+      /* aos */
+      AOS.init();
+    </script>
+  </body>
+</html>

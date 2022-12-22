@@ -1,0 +1,265 @@
+/* font-family: 'Nanum Myeongjo', serif; */
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap");
+/* font-family: 'Nanum Gothic', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* ----------title---------- */
+.title {
+  height: 100vh;
+  display: flex;
+  /* display: none; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Nanum Myeongjo", serif;
+  background: #ccc;
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url(../images/lionsunset.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+}
+.title .title-main-text {
+  font-size: 6rem;
+  font-weight: 800;
+}
+.title .title-main-text p:last-child {
+  margin-top: 15px;
+}
+.title .title-main-text p span {
+  margin: 15px;
+}
+.title .title-sub-text {
+  margin-top: 120px;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.title .title-sub-text p:last-child {
+  margin-top: 15px;
+}
+/* ----------greetings---------- */
+.greetings {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 0;
+}
+.greetings-main-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 60px;
+  font-family: "Nanum Myeongjo", serif;
+}
+.greetings-slide-img {
+  width: 80%;
+  height: 450px;
+}
+.greetings-sub-text {
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 1rem;
+  margin-top: 40px;
+  line-height: 1.8rem;
+}
+.greetings-sub-text p:last-child {
+  margin-top: 30px;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+/* ----------notice---------- */
+.notice {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 0;
+  background: #eee;
+}
+.notice-title-text h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: "Nanum Myeongjo", serif;
+  margin-bottom: 30px;
+}
+.notice-write-box {
+  position: relative;
+}
+.textareacount {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  top: -30px;
+  right: 0;
+  color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notice-write-box form {
+  width: 350px;
+}
+.notice-write-box form .notice-write-text {
+  width: 100%;
+}
+.notice-write-box form .notice-write-author {
+  width: 80%;
+}
+.notice-write-box form .notice-write-text,
+.notice-write-box form .notice-write-author {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+.notice-write-box form .notice-write-text:focus,
+.notice-write-box form .notice-write-author:focus {
+  outline: none;
+  outline: 2px solid #ccc;
+}
+
+.notice-write-box form button {
+  width: 18%;
+  padding: 12px 10px;
+  background: #999;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.notice-write-box form .notice-write-author,
+.notice-write-box form button {
+  margin-top: 10px;
+}
+
+.notice-contetns {
+  height: 55vh;
+  padding: 10px;
+  overflow-y: scroll;
+  width: 90%;
+  margin-top: 60px;
+}
+.notice-contetns::-webkit-scrollbar {
+  width: 10px;
+}
+.notice-contetns::-webkit-scrollbar-thumb {
+  background-color: #2f3542;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.notice-contetns::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
+.notice-content {
+  text-align-last: left;
+  margin-bottom: 30px;
+}
+.notice-content-info {
+  display: flex;
+  justify-content: space-between;
+}
+.notice-content-text {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  margin-top: 15px;
+}
+.notice-content-author p {
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+.notice-content-delete button {
+  font-size: 1.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .swiper {
+    width: 50%;
+  }
+  .notice-contetns {
+    width: 50%;
+  }
+  .notice-write-box form {
+    width: 700px;
+  }
+}
+
+/* swiper */
+.swiper {
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
+.slide01 {
+  background-image: url(../images/slide01.jpg);
+}
+.slide02 {
+  background-image: url(../images/slide02.jpg);
+}
+.slide03 {
+  background-image: url(../images/slide03.jpg);
+}
+.slide01,
+.slide02,
+.slide03 {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.swiper-pagination-bullet-active {
+  background: #fff;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+}
