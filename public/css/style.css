@@ -98,6 +98,9 @@
 .notice-write-box {
   position: relative;
 }
+#textarea {
+  font-size: 1rem;
+}
 .textareacount {
   position: absolute;
   width: 100px;
