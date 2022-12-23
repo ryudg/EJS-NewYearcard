@@ -1,8 +1,8 @@
 # 모바일 연하장
 > 클라우드타입 url : https://port-0-new-year-card-3pblc2flbyuajzq.gksl2.cloudtype.app/
 - 모바일 화면에서 최적화
+![merge_from_ofoct (1)](https://user-images.githubusercontent.com/103430498/209250166-661b0dc3-6edb-4c35-ac78-088f7cf83bb5.jpg)
 
-![화면 캡처 2022-12-23 091641](https://user-images.githubusercontent.com/103430498/209246496-bd7b26ef-8233-4ee7-9e34-a9119ba9dae6.png)
 
 
 # Description
