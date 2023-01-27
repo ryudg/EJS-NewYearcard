@@ -1,6 +1,6 @@
 # 모바일 연하장
 > EJS-NewYearcard
-> 클라우드타입 
+> 클라우드타입 : https://port-0-ejs-newyearcard-1b5xkk2flddunong.gksl2.cloudtype.app/
 - 모바일 화면에서 최적화
 - pc화면에서도 구동 가능함
 ![merge_from_ofoct (1)](https://user-images.githubusercontent.com/103430498/209250166-661b0dc3-6edb-4c35-ac78-088f7cf83bb5.jpg)
